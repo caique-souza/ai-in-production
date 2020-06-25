@@ -30,9 +30,9 @@ def predict():
     country = request.form["Country"]
     prediction = model_predict(country, year, month, date)
     prediction_jsonify = prediction['y_pred'].tolist()[0]
-    print('Ye Number hai-', prediction_jsonify)
+    print(prediction_jsonify)
     output_text = country+": Predicted Forecast for 30 day period on "+text+" is: "+str(round(prediction_jsonify, 2))
-    print("YE HONA HAI OUTPUT:", output_text)
+    print(output_text)
     # return jsonify(prediction['y_pred'].tolist())
     # return jsonify(prediction['y_pred'].tolist())
     return jsonify(output_text)
